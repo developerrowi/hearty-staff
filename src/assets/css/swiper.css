@@ -1,0 +1,228 @@
+.no-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.no-image button {
+    margin-top: 20px;
+    width: 30%;
+}
+.bucket-input {
+    color: #615b59;
+    max-width: 8rem;
+}
+div:focus,
+.bucket-input:focus {
+    outline: 0;
+}
+input.bucket-input {
+    --inp-font: 1rem;
+    font-size: var(--inp-font);
+    letter-spacing: 0.1em;
+    border: none;
+    padding: 0.3em 0.8em;
+    color: #e5c2a5;
+}
+
+input.bucket-input::placeholder {
+    color: #555154;
+}
+.bucket-input:focus {
+    box-shadow: inset 0 0 0.1em black;
+}
+div.active-bucket {
+    background: var(--secondary);
+}
+
+.search-bar {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+}
+.search-filed {
+    border-radius: 30px;
+    background-color: #1f2a39;
+}
+
+.light-orange-color {
+    color: #615b59;
+}
+.modal-bucket {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    background-color: #1f2a39;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease-in-out;
+    transform: scale(0);
+    overflow: hidden;
+    border-radius: 25px;
+}
+.open-bucket {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    overflow: hidden;
+}
+.close {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(82, 77, 77);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.modal-copy {
+    position: fixed;
+    top: 30%;
+    left: 30%;
+}
+
+/* Delete modal css */
+.modal-I {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease-in-out;
+    transform: scale(0);
+    overflow: hidden;
+}
+.open-I {
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+    overflow: hidden;
+}
+/*close modal css*/
+.close-modal {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #234;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.bg-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.new-itinerary-box {
+    background-color: #1f2a39;
+}
+.search {
+    display: block;
+    text-align: center;
+    height: 50px;
+    width: 50vw;
+    align-self: center;
+}
+.bucket-list-slider {
+    height: 100px;
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 30px;
+    margin-top: 20px;
+}
+.bucket-list-slider .swiper-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.bucket-list-slider .swiper-slide-active {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.bucket-list-slider .swiper-button-prev {
+    color: #615b59;
+    cursor: pointer;
+    position: absolute;
+}
+.bucket-list-slider .swiper-button-next {
+    color: #90756b;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+}
+
+.light-orange-color {
+    color: #896b61;
+}
+.bucket-list-slider .swiper-button-prev {
+    top: 50%;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32.737' height='30.266' viewBox='0 0 32.737 30.266'%3E%3Cg id='Group_2208' data-name='Group 2208' transform='matrix(-1, -0.017, 0.017, -1, 3573.403, 1399.636)' opacity='0.996'%3E%3Cpath id='Path_1276' data-name='Path 1276' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(19.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_1277' data-name='Path 1277' d='M3565,1307.564l6.57,14.649-6.57,14.649' transform='translate(0 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_7898' data-name='Path 7898' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(7.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+.bucket-list-slider .swiper-button-next {
+    top: 50%;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32.224' height='29.708' viewBox='0 0 32.224 29.708'%3E%3Cg id='Group_2207' data-name='Group 2207' transform='translate(-3564.544 -1307.359)' opacity='0.996'%3E%3Cpath id='Path_1276' data-name='Path 1276' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(19.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_1277' data-name='Path 1277' d='M3565,1307.564l6.57,14.649-6.57,14.649' transform='translate(0 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_7898' data-name='Path 7898' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(7.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+.bucket-list-slider .swiper-button-next::after {
+    display: none;
+}
+.bucket-list-slider .swiper-button-prev::after {
+    display: none;
+}
+@media (max-width: 768px) {
+    .bucket-input {
+        color: #615b59;
+        max-width: 6rem;
+    }
+    .bucket-list-slider {
+        height: 15vh;
+    }
+    .modal-bucket {
+        height: 50%;
+        width: 70%;
+        left: 15%;
+    }
+    .bucket-list-slider .swiper-button-next {
+        display: none;
+    }
+    .bucket-list-slider .swiper-button-prev {
+        display: none;
+    }
+    .search {
+        height: 40px;
+    }
+}

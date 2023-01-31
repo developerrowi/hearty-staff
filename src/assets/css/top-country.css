@@ -1,0 +1,106 @@
+
+/* swiper css*/
+.top-countries-swiper {
+    height: 75px;
+    width: 80vw;
+    align-self: center;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+.top-countries-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-countries-swiper .swiper-slide-active {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.top-countries-swiper .swiper-button-prev {
+    color: #615b59;
+    cursor: pointer;
+    position: absolute;
+}
+.top-countries-swiper .swiper-button-next {
+    color: #90756b;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 0;
+}
+
+.top-countries-swiper .swiper-button-prev {
+    position: fixed;
+    top: 27%;
+    left: 8%;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32.737' height='30.266' viewBox='0 0 32.737 30.266'%3E%3Cg id='Group_2208' data-name='Group 2208' transform='matrix(-1, -0.017, 0.017, -1, 3573.403, 1399.636)' opacity='0.996'%3E%3Cpath id='Path_1276' data-name='Path 1276' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(19.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_1277' data-name='Path 1277' d='M3565,1307.564l6.57,14.649-6.57,14.649' transform='translate(0 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_7898' data-name='Path 7898' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(7.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+.top-countries-swiper .swiper-button-next {
+    position: fixed;
+    top: 27%;
+    right: 8%;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32.224' height='29.708' viewBox='0 0 32.224 29.708'%3E%3Cg id='Group_2207' data-name='Group 2207' transform='translate(-3564.544 -1307.359)' opacity='0.996'%3E%3Cpath id='Path_1276' data-name='Path 1276' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(19.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_1277' data-name='Path 1277' d='M3565,1307.564l6.57,14.649-6.57,14.649' transform='translate(0 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3Cpath id='Path_7898' data-name='Path 7898' d='M3570.43,1307.564l6.57,14.649-6.57,14.649' transform='translate(7.22 0)' fill='none' stroke='%23c5ffbb' stroke-miterlimit='10' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+}
+.top-countries-swiper .swiper-button-next::after {
+    display: none;
+}
+.top-countries-swiper .swiper-button-prev::after {
+    display: none;
+}
+/*plan btn css*/
+.plan-btn {
+    position: fixed;
+    top: 80%;
+    left: 45%;
+    width: 15%;
+    height: 5%;
+    color: black;
+    background-color: #c5ffbb;
+    z-index: 999;
+    display: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.show-plan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 500px) {
+    .top-countries-swiper .swiper-button-next {
+        right: 0%;
+        top: 30%;
+        width: 20px;
+    }
+    .top-countries-swiper .swiper-button-prev {
+        width: 20px;
+        left: 0;
+        top: 30%;
+    }
+    .top-countries-swiper {
+        width: 85vw;
+    }
+    .country {
+        height: 75%;
+    }
+    .modal-det {
+        left: 10%;
+        width: 80%;
+    }
+    .btn-show {
+        left: 10%;
+        width: 80%;
+    }
+    .plan-btn {
+        left: 30%;
+        width: 40%;
+    }
+}
