@@ -79,11 +79,9 @@
   onMount(async () => {
     await initRouting()
     initLocale()
-    initSupabaseAuth()
+    await initSupabaseAuth()
 
-
-    getCurrentPosition()
-    getProducts()
+    await getProducts()
     
 		CapacitorApp?.addListener('backButton', ({ canGoBack }) => {
 			if (!canGoBack) {
