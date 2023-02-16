@@ -10,6 +10,8 @@
 
     let qty 
     let selectedProduct
+    let isSeniorCitizen
+    let seniorCitizenDiscount = .2
 
 	onMount(() => {
 		isProtectedRoute.set(true);
