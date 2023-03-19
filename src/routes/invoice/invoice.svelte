@@ -10,8 +10,9 @@
 
     let qty 
     let selectedProduct
-    let isSeniorCitizen
-    let seniorCitizenDiscount = .2
+    let isSeniorCitizen = false
+    let seniorCitizenDiscount = .10
+
 
 	onMount(() => {
 		isProtectedRoute.set(true);
@@ -56,13 +57,18 @@
         invoiceDetail.set([])
         qty = null
         totalPrice.set(0)
+        isSeniorCitizen = false
     }
 
     async function submitInvoice() {
+        let finalTotal = $totalPrice
+        if(isSeniorCitizen) finalTotal = $totalPrice - ($totalPrice * seniorCitizenDiscount)
+        
         let finalInsert = {
             type: 'Invoice',
             cashier: $authUser.email,
-            total: $totalPrice
+            total: finalTotal,
+            senior_discount: isSeniorCitizen ? seniorCitizenDiscount : null
         }
         await insertSales(finalInsert, $invoiceDetail)
 
@@ -100,6 +106,10 @@
 
 <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <div class="relative overflow-x-auto shadow-lg sm:rounded-lg p-5 custom-table">
+
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mt-5"
+            on:click={() => isSeniorCitizen = !isSeniorCitizen}> Senior Citizen </button>
+
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -146,7 +156,6 @@
                     </td>
                 </tr>
                 {/each}
-       
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="w-4 p-4 text-lg">Total</td>
                     <td class="w-4 p-4"></td>
@@ -154,7 +163,32 @@
                     <td class="w-4 p-4"> <h2 class="text-lg"> <strong> P{$totalPrice} </strong>  </h2> </td>
                     <td class="w-4 p-4"></td>
                 </tr>
-           
+                {#if isSeniorCitizen}
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td class="w-4 p-4 text-lg">Senior Discount</td>
+                    <td class="w-4 p-4"></td>
+                    <td class="w-4 p-4"></td>
+                    <td class="w-4 p-4"> <h2 class="text-lg"> <strong> - {$totalPrice * seniorCitizenDiscount} </strong>  </h2> </td>
+                    <td class="w-4 p-4"></td>
+                </tr>       
+        
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td class="w-4 p-4 text-lg">Grand Total</td>
+                    <td class="w-4 p-4"></td>
+                    <td class="w-4 p-4"></td>
+                    <td class="w-4 p-4"> <h2 class="text-lg"> <strong> P{$totalPrice - ($totalPrice * seniorCitizenDiscount)} </strong>  </h2> </td>
+                    <td class="w-4 p-4"></td>
+                </tr>
+                {/if}
+                {#if !isSeniorCitizen}
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td class="w-4 p-4 text-lg">Grand Total</td>
+                    <td class="w-4 p-4"></td>
+                    <td class="w-4 p-4"></td>
+                    <td class="w-4 p-4"> <h2 class="text-lg"> <strong> P{$totalPrice} </strong>  </h2> </td>
+                    <td class="w-4 p-4"></td>
+                </tr>
+                {/if}
             </tbody>
         </table>
         
