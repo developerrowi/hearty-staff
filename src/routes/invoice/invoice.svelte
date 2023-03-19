@@ -168,7 +168,7 @@
                     <td class="w-4 p-4 text-lg">Senior Discount</td>
                     <td class="w-4 p-4"></td>
                     <td class="w-4 p-4"></td>
-                    <td class="w-4 p-4"> <h2 class="text-lg"> <strong> - {$totalPrice * seniorCitizenDiscount} </strong>  </h2> </td>
+                    <td class="w-4 p-4"> <h2 class="text-lg"> <strong> - {($totalPrice * seniorCitizenDiscount).toFixed(2)} </strong>  </h2> </td>
                     <td class="w-4 p-4"></td>
                 </tr>       
         
